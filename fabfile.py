@@ -20,6 +20,6 @@ def test(args=None):
     # is being overridden.
     print(args)
     tests = "" if args else " tests"
-    default_args = "-sv --with-doctest --nologcapture --with-color %s" % tests
+    default_args = " %s" % tests
     default_args += (" " + args) if args else ""
     nose.core.run_exit(argv=[''] + default_args.split())
