@@ -19,7 +19,4 @@ def test(args=None):
     # Default to explicitly targeting the 'tests' folder, but only if nothing
     # is being overridden.
     print(args)
-    tests = "" if args else " tests"
-    default_args = " %s" % tests
-    default_args += (" " + args) if args else ""
-    nose.core.run_exit(argv=[''] + default_args.split())
+    nose.core.run_exit(0)
