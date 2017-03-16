@@ -18,7 +18,7 @@ def test(args=None):
     """
     # Default to explicitly targeting the 'tests' folder, but only if nothing
     # is being overridden.
-	print(args)
+    print(args)
     tests = "" if args else " tests"
     default_args = "-sv --with-doctest --nologcapture --with-color %s" % tests
     default_args += (" " + args) if args else ""
