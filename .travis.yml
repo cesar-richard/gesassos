@@ -6,10 +6,9 @@ install:
   # Build/test dependencies
   - pip install -r requirements.txt
   # Get fab to test fab
-  - pip install -e .
+  #- pip install -e .
   # Deal with issue on Travis builders re: multiprocessing.Queue :(
   - "sudo rm -rf /dev/shm && sudo ln -s /run/shm /dev/shm"
-  - "pip install jinja2"
 before_script:
   # Allow us to SSH passwordless to localhost
   - ssh-keygen -f ~/.ssh/id_rsa -N ""
@@ -25,6 +24,6 @@ script:
   # Build docs; www first without warnings so its intersphinx objects file
   # generates. Then docs (with warnings->errors), then www again (also w/
   # warnings on.) FUN TIMES WITH CIRCULAR DEPENDENCIES.
-  - invoke www
-  - invoke docs -o -W
-  - invoke www -c -o -W
+  #- invoke www
+  #- invoke docs -o -W
+  #- invoke www -c -o -W
